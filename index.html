@@ -1,10 +1,15 @@
-<html>
-<head>
-  <title>Github Test Website</title>
-<head>
+---
+layout: default
+title: My Jekyll Technology Web Site
+---
 
-<body>
-  <h2>Hello World!!!</h2>
-</body>
-
-</html>
+<div id="home">
+  <h1>My Blog Posts Todays</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  
+  You can check out out <a href="about.html">about us</a> page.
+</div>
